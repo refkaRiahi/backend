@@ -20,34 +20,22 @@ app.post("/send-email", async (req, res) => {
     }
   });
 
-  try {
-await transporter.sendMail({
-  from: `"${fullName} <${email}>" <refka.riahy@gmail.com>`,
-  replyTo: email,
-  to: "riahiriahi762@gmail.com",
-  subject: "Nouveau message client",
+try {
+  await transporter.sendMail({
+    from: `"${fullName} <${email}>" <refka.riahy@gmail.com>`,
+    replyTo: email,
+    to: "riahiriahi762@gmail.com",
+    subject: "Nouveau message client",
+    html: `<p>Nom: ${fullName}</p><p>Email: ${email}</p><p>Téléphone: ${phone}</p><p>Message: ${message}</p>`
+  });
+  
+  console.log("✅ Mail envoyé avec succès !");
+  res.json({ ok: true, sent: "true" });
 
-  html: `
-    <div style="background:#742F17; padding:20px; font-family:Arial; color:black;">
-      <h2 style="color:white;">Nouveau message client</h2>
-
-      <p><strong>Nom :</strong> ${fullName}</p>
-      <p><strong>Téléphone :</strong> ${phone}</p>
-      <p><strong>Email :</strong> ${email}</p>
-
-    
-
-      <p><strong>Message :</strong></p>
-      <p>${message}</p>
-    </div>
-  `
-});
-    res.json({ ok: true });
-
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Erreur d'envoi" });
-  }
+} catch (error) {
+  console.error("❌ Nodemailer erreur:", error);
+  res.status(500).json({ error: "Erreur d'envoi", details: error.message });
+}
 });
 
 const PORT = process.env.PORT || 3000;
