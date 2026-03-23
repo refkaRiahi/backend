@@ -24,7 +24,7 @@ app.post("/send-email", async (req, res) => {
 await transporter.sendMail({
   from: `"${fullName} <${email}>" <refka.riahy@gmail.com>`,
   replyTo: email,
-  to: "riahiriahi762@gmail.com ",
+  to: "riahiriahi762@gmail.com",
   subject: "Nouveau message client",
 
   html: `
@@ -50,4 +50,5 @@ await transporter.sendMail({
   }
 });
 
-app.listen(3000, () => console.log("Serveur démarré sur http://localhost:3000"));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Serveur démarré sur ${PORT}`));
