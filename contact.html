@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Contact</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/logotype-01.png" type="image/gif" />
+      <!-- font css -->
+     <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      
+      <!-- ⭐ AJOUT 1: Style pour les messages d'alerte -->
+      <style>
+         .alert {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            display: none;
+            font-size: 16px;
+            text-align: center;
+         }
+         .alert-success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+         }
+         .alert-error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+         }
+         .send_bt.loading {
+            opacity: 0.6;
+            pointer-events: none;
+         }
+      </style>
+   </head>
+   <body>
+<style>
+   body {
+      position: relative;
+      margin: 0;
+      min-height: 100vh;
+      background-image: url("images/back.PNG");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+   }
+
+   body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.4); /* couche transparente */
+      z-index: -1;
+   }
+</style>
+
+
+      <!-- header section end -->
+      <!-- contact section start -->
+      <div class="contact_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="contact_taital contact_heading">CONTACTEZ-NOUS</h1>
+                  <h4><span style="color: #742F17;margin-left:378px;">ENVOYEZ-NOUS UN MESSAGE / RECLAMATION </span></h4>
+               </div>
+            </div>
+            <div class="contact_section_2">
+               <div class="row">
+                  <div class="col-md-12">
+                     <!-- ⭐ AJOUT 2: Zone pour afficher les messages -->
+                     <div id="alertMessage" class="alert"></div>
+                     
+                     <div class="mail_section map_form_container">
+                        <!-- ⭐ MODIFICATION 3: Ajout de l'ID et changement des attributs name -->
+<form id="contactForm">
+  <input type="text" id="fullName" placeholder="Nom complet" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <input type="text" id="phone" placeholder="Téléphone client" required>
+  <textarea id="message" placeholder="Message" required></textarea>
+  <button type="button" onclick="envoyerFormulaire()">Envoyer</button>
+</form>
+                    </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- contact section end -->
+      <!-- footer section start -->
+      <!-- footer section end -->
+      <!-- copyright section start -->
+     <div class="copyright_section">
+         <div class="container">
+            <p class="copyright_text">© 2026 TRACK TECHNOLOGY. All Rights Reserved|Design by IT TRACK TECHNOLOGY</a></p>
+         </div>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- jQuery أولاً -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- ثم plugins الخاصة بك -->
+<script src="js/jquery.nicescroll.min.js"></script>
+<script src="js/jquery.meanmenu.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+      <!-- ⭐ AJOUT 5: Script JavaScript pour gérer l'envoi du formulaire -->
+   </body>
+</html>
+
+
+<!-- jQuery (une seule fois) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Plugins -->
+<script src="js/jquery.nicescroll.min.js"></script>
+<script src="js/jquery.meanmenu.js"></script>
+<script src="js/jquery.sticky.js"></script>
+
+<!-- Bootstrap -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom scripts -->
+<script src="js/plugin.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/custom.js"></script>
+
+<!-- Script WhatsApp -->
+<script>
+async function envoyerFormulaire() {
+
+  const fullName = document.getElementById('fullName').value.trim();
+  const email    = document.getElementById('email').value.trim();
+  const phone    = document.getElementById('phone').value.trim();
+  const message  = document.getElementById('message').value.trim();
+
+  if (!fullName || !email || !phone || !message) {
+    alert("Veuillez remplir tous les champs.");
+    return;
+  }
+
+  try {
+    const response = await fetch("http://localhost:3000/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ fullName, email, phone, message })
+    });
+
+    const result = await response.json();
+
+    if (result.sent === "true") {
+      alert("✅ Message envoyé sur WhatsApp !");
+      document.getElementById('contactForm').reset();
+    } else {
+    }
+
+  } catch (error) {
+  }
+}
+</script>
