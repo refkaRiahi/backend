@@ -18,7 +18,10 @@ app.post("/send-email", async (req, res) => {
       user: process.env.SMTP_USERNAME, // TON email
       pass:  process.env.SMTP_PASSWORD  // Mot de passe d’application Gmail
     },
-     tls: { rejectUnauthorized: false },
+   connectionTimeout: 10000, // 10 secondes
+  greetingTimeout: 10000,
+  socketTimeout: 10000,
+    tls: { rejectUnauthorized: false },
   family: 4
   });
 
