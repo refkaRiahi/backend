@@ -27,7 +27,7 @@ app.post("/send-email", async (req, res) => {
 
 try {
   await transporter.sendMail({
-    from: `"${fullName} <${email}>" <refka.riahy@gmail.com>`,
+    from: `"${fullName} <${email}>" <${process.env.SMTP_USERNAME}>`,
     replyTo: email,
     to: "riahiriahi762@gmail.com",
     subject: "Nouveau message client",
